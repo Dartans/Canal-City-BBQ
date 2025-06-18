@@ -195,23 +195,34 @@ class ContentManager {
         
         // Update calendar section
         const calendarContainer = document.querySelector('.calendar-container');
-        calendarContainer.querySelector('h3').textContent = booking.calendar.title;
+        if (calendarContainer) {
+            const calendarTitle = calendarContainer.querySelector('h3');
+            if (calendarTitle) {
+                calendarTitle.textContent = booking.calendar.title;
+            }
+        }
     }
 
     populateFooter() {
         const footerSections = document.querySelectorAll('.footer-section');
         
         // Business name section
-        footerSections[0].querySelector('h3').textContent = this.config.business.name;
-        footerSections[0].querySelector('p').textContent = this.config.business.tagline;
+        if (footerSections[0]) {
+            const businessTitle = footerSections[0].querySelector('h3');
+            const businessTagline = footerSections[0].querySelector('p');
+            if (businessTitle) businessTitle.textContent = this.config.business.name;
+            if (businessTagline) businessTagline.textContent = this.config.business.tagline;
+        }
         
         // Contact section
-        const contactSection = footerSections[1];
-        contactSection.innerHTML = `
-            <h4>Contact</h4>
-            <p>${this.config.business.phone}</p>
-            <p>${this.config.business.email}</p>
-        `;
+        if (footerSections[1]) {
+            const contactSection = footerSections[1];
+            contactSection.innerHTML = `
+                <h4>Contact</h4>
+                <p>${this.config.business.phone}</p>
+                <p>${this.config.business.email}</p>
+            `;
+        }
         
         // Hours section
         const hoursSection = footerSections[2];
