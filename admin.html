@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canal City BBQ - Content Admin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .admin-header {
+            background: #8b4513;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .section h3 {
+            color: #8b4513;
+            border-bottom: 2px solid #ff6347;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .menu-item, .service-item, .package-item {
+            border: 1px solid #eee;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+        .btn {
+            background: #ff6347;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn:hover {
+            background: #ff4500;
+        }
+        .btn-secondary {
+            background: #8b4513;
+        }
+        .btn-secondary:hover {
+            background: #654321;
+        }
+        .actions {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .note {
+            background: #ffd700;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-header">
+        <h1>Canal City BBQ - Content Management</h1>
+        <p>Edit your website content easily without touching the code!</p>
+    </div>
+
+    <div class="note">
+        <strong>Note:</strong> This is a demonstration admin interface. In a real implementation, you would save changes to a database or file system with proper authentication.
+    </div>
+
+    <div class="actions">
+        <button class="btn" onclick="loadCurrentConfig()">Load Current Content</button>
+        <button class="btn btn-secondary" onclick="saveConfig()">Save Changes</button>
+        <button class="btn btn-secondary" onclick="previewChanges()">Preview Changes</button>
+    </div>
+
+    <div class="section">
+        <h3>Business Information</h3>
+        <div class="form-group">
+            <label>Business Name:</label>
+            <input type="text" id="businessName" placeholder="Canal City BBQ">
+        </div>
+        <div class="form-group">
+            <label>Phone Number:</label>
+            <input type="text" id="businessPhone" placeholder="(555) 123-BBQ1">
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" id="businessEmail" placeholder="info@canalcitybbq.com">
+        </div>
+        <div class="form-group">
+            <label>Service Area:</label>
+            <input type="text" id="serviceArea" placeholder="Within 25 miles of Canal City">
+        </div>
+        <div class="form-group">
+            <label>Tagline:</label>
+            <input type="text" id="tagline" placeholder="Authentic BBQ Catering for Your Special Events">
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Hero Section</h3>
+        <div class="form-group">
+            <label>Hero Title:</label>
+            <input type="text" id="heroTitle" placeholder="Canal City BBQ">
+        </div>
+        <div class="form-group">
+            <label>Hero Subtitle:</label>
+            <input type="text" id="heroSubtitle" placeholder="Authentic BBQ Catering for Your Special Events">
+        </div>
+        <div class="form-group">
+            <label>Hero Description:</label>
+            <textarea id="heroDescription" placeholder="Slow-smoked perfection served with pride..."></textarea>
+        </div>
+        <div class="form-group">
+            <label>Call-to-Action Button Text:</label>
+            <input type="text" id="ctaText" placeholder="Book Your Event">
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Quick Actions</h3>
+        <button class="btn" onclick="addMenuItem()">Add Menu Item</button>
+        <button class="btn" onclick="addService()">Add Service</button>
+        <button class="btn" onclick="addPackage()">Add Package</button>
+    </div>
+
+    <div id="configOutput" style="display: none;">
+        <div class="section">
+            <h3>Configuration JSON</h3>
+            <textarea id="jsonOutput" style="height: 300px; font-family: monospace;"></textarea>
+        </div>
+    </div>
+
+    <script>
+        let currentConfig = {};
+
+        async function loadCurrentConfig() {
+            try {
+                const response = await fetch('config.json');
+                currentConfig = await response.json();
+                populateForm();
+                alert('Current configuration loaded!');
+            } catch (error) {
+                console.error('Error loading config:', error);
+                alert('Error loading configuration. Please check the console.');
+            }
+        }
+
+        function populateForm() {
+            document.getElementById('businessName').value = currentConfig.business?.name || '';
+            document.getElementById('businessPhone').value = currentConfig.business?.phone || '';
+            document.getElementById('businessEmail').value = currentConfig.business?.email || '';
+            document.getElementById('serviceArea').value = currentConfig.business?.serviceArea || '';
+            document.getElementById('tagline').value = currentConfig.business?.tagline || '';
+            
+            document.getElementById('heroTitle').value = currentConfig.hero?.title || '';
+            document.getElementById('heroSubtitle').value = currentConfig.hero?.subtitle || '';
+            document.getElementById('heroDescription').value = currentConfig.hero?.description || '';
+            document.getElementById('ctaText').value = currentConfig.hero?.ctaText || '';
+        }
+
+        function collectFormData() {
+            const updatedConfig = {
+                ...currentConfig,
+                business: {
+                    ...currentConfig.business,
+                    name: document.getElementById('businessName').value,
+                    phone: document.getElementById('businessPhone').value,
+                    email: document.getElementById('businessEmail').value,
+                    serviceArea: document.getElementById('serviceArea').value,
+                    tagline: document.getElementById('tagline').value
+                },
+                hero: {
+                    ...currentConfig.hero,
+                    title: document.getElementById('heroTitle').value,
+                    subtitle: document.getElementById('heroSubtitle').value,
+                    description: document.getElementById('heroDescription').value,
+                    ctaText: document.getElementById('ctaText').value
+                }
+            };
+            return updatedConfig;
+        }
+
+        function saveConfig() {
+            const updatedConfig = collectFormData();
+            
+            // In a real implementation, you would send this to a server
+            // For demo purposes, we'll just show the JSON
+            document.getElementById('jsonOutput').value = JSON.stringify(updatedConfig, null, 2);
+            document.getElementById('configOutput').style.display = 'block';
+            
+            alert('Configuration prepared! In a real implementation, this would be saved to the server.');
+        }
+
+        function previewChanges() {
+            const updatedConfig = collectFormData();
+            
+            // Open the main website in a new window/tab for preview
+            window.open('index.html', '_blank');
+            
+            // In a real implementation, you might temporarily update the config
+            // or have a preview mode
+            alert('Opening main website for preview. Changes are not yet saved.');
+        }
+
+        function addMenuItem() {
+            const name = prompt('Menu item name:');
+            const description = prompt('Description:');
+            const price = prompt('Price:');
+            
+            if (name && description && price) {
+                alert(`Menu item "${name}" would be added with description "${description}" and price "${price}"`);
+            }
+        }
+
+        function addService() {
+            const title = prompt('Service title:');
+            const description = prompt('Service description:');
+            const icon = prompt('Service icon (emoji):');
+            
+            if (title && description && icon) {
+                alert(`Service "${title}" would be added with icon "${icon}"`);
+            }
+        }
+
+        function addPackage() {
+            const name = prompt('Package name:');
+            const description = prompt('Package description:');
+            const price = prompt('Package price:');
+            
+            if (name && description && price) {
+                alert(`Package "${name}" would be added with description "${description}" and price "${price}"`);
+            }
+        }
+
+        // Load config on page load
+        window.onload = function() {
+            loadCurrentConfig();
+        };
+    </script>
+</body>
+</html>

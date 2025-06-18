@@ -1,0 +1,179 @@
+{
+  "business": {
+    "name": "Canal City BBQ",
+    "tagline": "Authentic BBQ Catering for Your Special Events",
+    "description": "Slow-smoked perfection served with pride. From intimate gatherings to large celebrations, we bring the authentic taste of BBQ to your doorstep.",
+    "phone": "(555) 123-BBQ1",
+    "email": "info@canalcitybbq.com",
+    "serviceArea": "Within 25 miles of Canal City",
+    "hours": {
+      "availability": "Catering available 7 days a week",
+      "notice": "Book 24-48 hours in advance"
+    }
+  },
+  "hero": {
+    "title": "Canal City BBQ",
+    "subtitle": "Authentic BBQ Catering for Your Special Events",
+    "description": "Slow-smoked perfection served with pride. From intimate gatherings to large celebrations, we bring the authentic taste of BBQ to your doorstep.",
+    "ctaText": "Book Your Event"
+  },
+  "about": {
+    "title": "About Canal City BBQ",
+    "subtitle": "Serving authentic BBQ with passion and tradition",
+    "story": {
+      "title": "Our Story",
+      "content": "Founded with a passion for authentic BBQ, Canal City BBQ has been serving the community with mouth-watering, slow-smoked meats and traditional sides. Our commitment to quality ingredients and time-honored cooking methods ensures every bite is a memorable experience."
+    },
+    "features": {
+      "title": "What Makes Us Special",
+      "items": [
+        "12+ hours slow-smoking process",
+        "Premium cuts and fresh ingredients",
+        "Family recipes passed down through generations",
+        "Full-service catering with setup and cleanup",
+        "Customizable menus for any event size"
+      ]
+    }
+  },
+  "menu": {
+    "title": "Our Menu",
+    "subtitle": "Authentic BBQ favorites that will make your event unforgettable",
+    "categories": [
+      {
+        "name": "Smoked Meats",
+        "items": [
+          {
+            "name": "Brisket",
+            "description": "12-hour smoked beef brisket with our signature dry rub",
+            "price": "$18/lb"
+          },
+          {
+            "name": "Pulled Pork",
+            "description": "Tender pork shoulder smoked low and slow",
+            "price": "$14/lb"
+          },
+          {
+            "name": "BBQ Ribs",
+            "description": "St. Louis style ribs with house-made BBQ sauce",
+            "price": "$16/lb"
+          },
+          {
+            "name": "Smoked Chicken",
+            "description": "Half chickens rubbed and smoked to perfection",
+            "price": "$12/lb"
+          }
+        ]
+      },
+      {
+        "name": "Sides & Fixings",
+        "items": [
+          {
+            "name": "Mac & Cheese",
+            "description": "Creamy three-cheese mac with crispy breadcrumb topping",
+            "price": "$8/quart"
+          },
+          {
+            "name": "Coleslaw",
+            "description": "Fresh cabbage slaw with tangy dressing",
+            "price": "$6/quart"
+          },
+          {
+            "name": "Baked Beans",
+            "description": "Slow-cooked beans with molasses and brown sugar",
+            "price": "$7/quart"
+          },
+          {
+            "name": "Cornbread",
+            "description": "Sweet cornbread made from scratch",
+            "price": "$3/piece"
+          }
+        ]
+      }
+    ],
+    "packages": {
+      "title": "Catering Packages",
+      "items": [
+        {
+          "name": "The Starter (10-15 people)",
+          "description": "Choice of 2 meats, 2 sides, rolls, and sauce",
+          "price": "Starting at $250"
+        },
+        {
+          "name": "The Crowd Pleaser (20-30 people)",
+          "description": "Choice of 3 meats, 3 sides, rolls, and sauce",
+          "price": "Starting at $425"
+        },
+        {
+          "name": "The Big Event (50+ people)",
+          "description": "Full menu options, setup, serving, and cleanup",
+          "price": "Starting at $15/person"
+        }
+      ]
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Full-service catering for any occasion",
+    "items": [
+      {
+        "icon": "🎉",
+        "title": "Corporate Events",
+        "description": "Impress your clients and colleagues with authentic BBQ catering for meetings, conferences, and company celebrations."
+      },
+      {
+        "icon": "💒",
+        "title": "Weddings",
+        "description": "Make your special day even more memorable with our wedding catering packages and professional service."
+      },
+      {
+        "icon": "🏠",
+        "title": "Private Parties",
+        "description": "From backyard gatherings to milestone celebrations, we bring the BBQ experience to your home."
+      },
+      {
+        "icon": "🍽️",
+        "title": "Full Service",
+        "description": "Complete catering service including setup, serving staff, and cleanup - just enjoy your event!"
+      },
+      {
+        "icon": "🚚",
+        "title": "Delivery & Pickup",
+        "description": "Convenient delivery options or pickup from our location - we work with your schedule."
+      },
+      {
+        "icon": "📋",
+        "title": "Custom Menus",
+        "description": "Dietary restrictions or special requests? We'll work with you to create the perfect menu."
+      }
+    ]
+  },
+  "booking": {
+    "title": "Book Your Event",
+    "subtitle": "Schedule your BBQ catering today",
+    "intro": {
+      "title": "Ready to Book?",
+      "description": "Select a date and time that works for your event. We recommend booking at least 2 weeks in advance for the best availability."
+    },
+    "calendar": {
+      "title": "Select Your Date",
+      "embedUrl": "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3V-tV33V_YaW0fTg5NvrYFaheVTNsAuntHVO1TMo2a8DXRlmEonLJ6LoabNrKJKFHnuKSrkqgw?gv=true",
+      "note": "Book your BBQ catering appointment directly through our calendar"
+    },
+    "notes": {
+      "title": "Booking Notes",
+      "items": [
+        "Minimum order of $200 for catering",
+        "24-48 hours notice required",
+        "Delivery fee may apply based on location",
+        "Custom quotes available for large events"
+      ]
+    }
+  },
+  "navigation": [
+    { "text": "Home", "href": "#home" },
+    { "text": "About", "href": "#about" },
+    { "text": "Menu", "href": "#menu" },
+    { "text": "Services", "href": "#services" },
+    { "text": "Book Now", "href": "#booking" }
+  ]
+}
