@@ -485,6 +485,13 @@ body {
     left: 0;
 }
 
+.calendar-container {
+    width: 100%;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 2px solid #f0f0f0;
+}
+
 .calendar-container h3 {
     font-size: 1.5rem;
     margin-bottom: 20px;
@@ -497,12 +504,20 @@ body {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calendar-placeholder:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
 }
 
 .calendar-placeholder iframe {
     width: 100%;
-    height: 500px; /* Mobile-appropriate height */
+    height: 600px; /* Increased mobile height */
     border: none;
+    display: block;
 }
 
 /* =================================================================
@@ -658,13 +673,22 @@ body {
     }
 
     .booking-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 48px;
+        display: block; /* Stack vertically for better readability */
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .booking-info {
+        margin-bottom: 48px;
+    }
+
+    .calendar-container {
+        width: 100%;
     }
 
     .calendar-placeholder iframe {
-        height: 600px;
+        height: 700px; /* Increased height to reduce scrolling */
+        min-height: 600px;
     }
 
     .footer-content {
@@ -672,6 +696,18 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 32px;
         text-align: left;
+    }
+}
+
+/* Large tablet styles (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .booking-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    .calendar-placeholder iframe {
+        height: 650px;
     }
 }
 
