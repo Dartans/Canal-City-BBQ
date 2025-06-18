@@ -155,9 +155,7 @@
       "description": "Select a date and time that works for your event. We recommend booking at least 2 weeks in advance for the best availability."
     },
     "calendar": {
-      "title": "Select Your Date",
-      "embedUrl": "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3V-tV33V_YaW0fTg5NvrYFaheVTNsAuntHVO1TMo2a8DXRlmEonLJ6LoabNrKJKFHnuKSrkqgw?gv=true",
-      "note": "Book your BBQ catering appointment directly through our calendar"
+      "title": "Select Your Date"
     },
     "notes": {
       "title": "Booking Notes",

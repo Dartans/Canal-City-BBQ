@@ -196,20 +196,6 @@ class ContentManager {
         // Update calendar section
         const calendarContainer = document.querySelector('.calendar-container');
         calendarContainer.querySelector('h3').textContent = booking.calendar.title;
-        
-        const calendarIframe = calendarContainer.querySelector('iframe');
-        if (calendarIframe) {
-            calendarIframe.src = booking.calendar.embedUrl;
-            calendarIframe.style.border = '0';
-            calendarIframe.width = '100%';
-            calendarIframe.height = '600';
-            calendarIframe.frameBorder = '0';
-        }
-        
-        const calendarNote = calendarContainer.querySelector('.calendar-note');
-        if (calendarNote) {
-            calendarNote.textContent = booking.calendar.note;
-        }
     }
 
     populateFooter() {
