@@ -265,16 +265,22 @@ body {
     left: 0;
 }
 
-.about-image .image-placeholder {
-    background: #ddd;
-    height: 250px; /* Mobile-appropriate height */
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #666;
-    font-size: 1rem;
+.about-image {
     margin-top: 24px;
+}
+
+.about-image .smoker-image {
+    width: 100%;
+    height: auto;
+    max-height: 250px; /* Mobile-appropriate height */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image .smoker-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* =================================================================
@@ -649,9 +655,12 @@ body {
         align-items: center;
     }
 
-    .about-image .image-placeholder {
-        height: 350px;
+    .about-image {
         margin-top: 0;
+    }
+
+    .about-image .smoker-image {
+        max-height: 350px;
     }
 
     .menu-categories {

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients for realistic shading -->
+    <linearGradient id="smokerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c2c2c;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#404040;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="fireboxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#333333;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1f1f1f;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="lidGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#555555;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3a3a3a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a2a2a;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="smokeGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#e0e0e0;stop-opacity:0.8" />
+      <stop offset="70%" style="stop-color:#c0c0c0;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#a0a0a0;stop-opacity:0.2" />
+    </radialGradient>
+    
+    <linearGradient id="flameGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4500;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#ff6500;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#ffaa00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffdd00;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#f5f5f5"/>
+  
+  <!-- Ground -->
+  <rect x="0" y="250" width="400" height="50" fill="#8b7355"/>
+  
+  <!-- Smoke plumes -->
+  <ellipse cx="320" cy="80" rx="15" ry="25" fill="url(#smokeGradient)" opacity="0.6">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -5,-10; 5,-20; -3,-30; 0,-40" dur="3s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="340" cy="75" rx="12" ry="20" fill="url(#smokeGradient)" opacity="0.5">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 3,-8; -2,-16; 4,-25; 0,-35" dur="2.5s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="330" cy="70" rx="10" ry="15" fill="url(#smokeGradient)" opacity="0.4">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -2,-12; 3,-24; -1,-36; 0,-45" dur="3.5s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <!-- Main cooking chamber -->
+  <rect x="50" y="120" width="200" height="80" rx="40" ry="40" fill="url(#smokerGradient)" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Lid -->
+  <ellipse cx="150" cy="120" rx="100" ry="20" fill="url(#lidGradient)" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Lid handle -->
+  <rect x="140" y="105" width="20" height="8" rx="4" fill="#8b4513"/>
+  <circle cx="150" cy="109" r="3" fill="#654321"/>
+  
+  <!-- Temperature gauge -->
+  <circle cx="180" cy="140" r="15" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+  <circle cx="180" cy="140" r="12" fill="#fff"/>
+  <line x1="180" y1="132" x2="185" y2="140" stroke="#ff0000" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="180" cy="140" r="2" fill="#333"/>
+  
+  <!-- Door -->
+  <rect x="80" y="140" width="50" height="50" rx="5" fill="url(#lidGradient)" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="120" cy="165" r="3" fill="#c0c0c0"/>
+  
+  <!-- Firebox -->
+  <rect x="260" y="150" width="60" height="50" rx="10" fill="url(#fireboxGradient)" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Firebox door -->
+  <rect x="270" y="160" width="25" height="30" rx="3" fill="url(#lidGradient)" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="290" cy="175" r="2" fill="#c0c0c0"/>
+  
+  <!-- Flames inside firebox (visible through slight opening) -->
+  <path d="M275 185 Q277 180 275 175 Q280 178 278 172 Q282 175 280 170" fill="url(#flameGradient)" opacity="0.8">
+    <animateTransform attributeName="transform" type="scale" values="1,1; 1.1,0.9; 0.9,1.1; 1,1" dur="1s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Chimney -->
+  <rect x="315" y="80" width="30" height="80" fill="url(#smokerGradient)" stroke="#1a1a1a" stroke-width="2"/>
+  <rect x="310" y="75" width="40" height="15" fill="url(#lidGradient)" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Legs -->
+  <rect x="70" y="200" width="8" height="50" fill="#2c2c2c"/>
+  <rect x="125" y="200" width="8" height="50" fill="#2c2c2c"/>
+  <rect x="175" y="200" width="8" height="50" fill="#2c2c2c"/>
+  <rect x="230" y="200" width="8" height="50" fill="#2c2c2c"/>
+  <rect x="280" y="200" width="8" height="50" fill="#2c2c2c"/>
+  <rect x="305" y="200" width="8" height="50" fill="#2c2c2c"/>
+  
+  <!-- Side handles -->
+  <ellipse cx="40" cy="160" rx="8" ry="4" fill="#8b4513"/>
+  <ellipse cx="260" cy="160" rx="8" ry="4" fill="#8b4513"/>
+  
+  <!-- Grill grates indicator lines -->
+  <line x1="60" y1="170" x2="240" y2="170" stroke="#666" stroke-width="1" opacity="0.5"/>
+  <line x1="60" y1="180" x2="240" y2="180" stroke="#666" stroke-width="1" opacity="0.5"/>
+  
+  <!-- Wood chips/pellets in firebox -->
+  <circle cx="285" cy="190" r="2" fill="#8b4513"/>
+  <circle cx="290" cy="188" r="1.5" fill="#654321"/>
+  <circle cx="295" cy="192" r="2" fill="#8b4513"/>
+  <circle cx="300" cy="190" r="1.5" fill="#654321"/>
+  
+  <!-- Brand/model text -->
+  <text x="150" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#c0c0c0">BBQ MASTER</text>
+  
+  <!-- Heat waves -->
+  <path d="M100 120 Q105 115 110 120 Q115 125 120 120" stroke="#ff6347" stroke-width="1" fill="none" opacity="0.6">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-2; 0,0" dur="0.5s" repeatCount="indefinite"/>
+  </path>
+  <path d="M170 120 Q175 115 180 120 Q185 125 190 120" stroke="#ff6347" stroke-width="1" fill="none" opacity="0.6">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-2; 0,0" dur="0.7s" repeatCount="indefinite"/>
+  </path>
+</svg>
